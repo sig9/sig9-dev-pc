@@ -100,5 +100,11 @@
 # Google Backup and Sync (macOS) / Insync (Linux)
 - import_playbook: google-backup/core.yaml
 
-# JetBrains Toolbox (used to install/updated JetBrains tools)
-- import_playbook: jetbrains/core.yaml
+# # JetBrains Toolbox (used to install/updated JetBrains tools)
+# - import_playbook: jetbrains/core.yaml
+
+# # Spotify
+# - import_playbook: spotify/core.yaml
+
+# # Sublime Text and Sublime Merge
+# - import_playbook: sublime/core.yaml
