@@ -15,7 +15,7 @@
   "editor.renderWhitespace": "boundary",
   "editor.showFoldingControls": "always",
   "editor.suggestSelection": "first",
-  "files.autoSave": "onWindowChange",
+  "files.autoSave": "onFocusChange",
   "files.defaultLanguage": "markdown",
   "files.trimTrailingWhitespace": true,
 
