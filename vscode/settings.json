@@ -215,5 +215,6 @@
       "name": "Vue Green",
       "value": "#42b883"
     }
-  ]
+  ],
+  "telemetry.enableTelemetry": false
 }
