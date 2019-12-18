@@ -85,7 +85,7 @@
               green:   '0x4e9a06'
               magenta: '0x75507b'
               red:     '0xae5e5e'
-              white:   '0x2e3436'
+              white:   '0xb5bbae'
               yellow:  '0x9b7f00'
 
           key_bindings:
