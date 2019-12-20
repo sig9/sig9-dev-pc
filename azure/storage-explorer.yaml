@@ -6,9 +6,13 @@
     is_mac: "{{ ansible_distribution == 'MacOSX' }}"
 
   tasks:
+<<<<<<< HEAD
     - set_fact: is_wsl={{ not is_mac and lookup('file', '/proc/version') is regex('(M|m)icrosoft') }}
 
     # Linux
+=======
+    - set_fact: is_wsl={{ lookup('file', '/proc/version') | lower is search('microsoft') }}
+>>>>>>> ae14305... fix case bug in is_wsl logic
 
     - name: Install Storage Explorer (Linux)
       become: yes
