@@ -116,8 +116,12 @@
         marker: "### {mark} Ansible managed: login banner"
         block: |
           echo ""
-          neofetch
-          fortune
+          if [[ -n "${INSIDE_EMACS}" ]] ; then
+            neofetch|sed 's/\x1B\[[0-9;\?]*[a-zA-Z]//g'
+          else
+            neofetch
+          fi
+          /usr/games/fortune
 
     - name: Disable sudo password requirement
       become: yes
@@ -179,7 +183,9 @@
             echo "$((${pos[1]} - 1))"
           }
 
-          PROMPT_COMMAND="clear_newline;writeCwdInTitlebar;"
+          if [[ -z ${INSIDE_EMACS} ]] ; then
+            PROMPT_COMMAND="clear_newline;writeCwdInTitlebar;"
+          fi
 
           # Environment customization
           export ANSIBLE_NOCOWS=1
