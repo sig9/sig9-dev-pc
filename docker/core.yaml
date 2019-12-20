@@ -73,3 +73,11 @@
         url: "{{ docker_machine_version.stdout }}"
         dest: /usr/local/bin/docker-machine
         mode: 0755
+    
+    - name: Update environment for WSL
+      blockinfile:
+        path: ~/.bashrc
+        marker: "### {mark} Ansible managed: Use the windows desktop docker daemon tcp socket"
+        block: |
+          export DOCKER_HOST=tcp://localhost:2375
+      when: is_wsl
