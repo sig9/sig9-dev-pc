@@ -6,13 +6,13 @@
     is_mac: "{{ ansible_distribution == 'MacOSX' }}"
 
   tasks:
-    # Linux
+    - set_fact: is_wsl={{ lookup('file', '/proc/version') | lower is search('microsoft') }}
 
     - name: Add Scooter Software APT package key
       become: yes
       apt_key:
         url: https://www.scootersoftware.com/RPM-GPG-KEY-scootersoftware
-      when: not is_mac
+      when: not is_mac and not is_wsl
 
     - name: Add Beyond Compare APT package repository
       become: yes
@@ -21,13 +21,13 @@
         filename: scootersoftware
         update_cache: no
       register: apt_repository
-      when: not is_mac
+      when: not is_mac and not is_wsl
 
     - name: Update APT package list
       become: yes
       apt:
         update_cache: yes
-      when: apt_repository.changed
+      when: apt_repository.changed and not is_wsl
       register: apt_update
       retries: 5
       until: apt_update is success
@@ -36,7 +36,7 @@
       become: yes
       apt:
         package: bcompare
-      when: not is_mac
+      when: not is_mac and not is_wsl
 
     - name: Add bcomp alias
       file:
