@@ -51,8 +51,8 @@
 # Virtualization (QEMU/KVM on Linux, VirtualBox on macOS)
 - import_playbook: virtualization/core.yaml
 
-# Mono (.NET Framework)
-- import_playbook: mono/core.yaml
+## Mono (.NET Framework)
+#- import_playbook: mono/core.yaml
 
 # NodeJS
 - import_playbook: nodejs/core.yaml
@@ -69,8 +69,8 @@
 # Python
 - import_playbook: python/core.yaml
 
-# Ruby
-- import_playbook: ruby/core.yaml
+## Ruby
+#- import_playbook: ruby/core.yaml
 
 ##### Applications (free)
 
