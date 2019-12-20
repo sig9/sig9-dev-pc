@@ -3,7 +3,7 @@
   connection: local
 
   tasks:
-    - set_fact: is_wsl={{ lookup('file', '/proc/version') is search('microsoft') }}
+    - set_fact: is_wsl={{ lookup('file', '/proc/version') | lower is search('microsoft') }}
 
     - name: Install Emacs
       become: yes
@@ -11,3 +11,10 @@
         package:
           - emacs
       when: not is_wsl
+
+    - name: Install Emacs-nox
+      become: yes
+      apt:
+        package:
+          - emacs-nox
+      when: is_wsl
