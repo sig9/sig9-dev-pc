@@ -216,5 +216,6 @@
       "value": "#42b883"
     }
   ],
-  "telemetry.enableTelemetry": false
+  "telemetry.enableTelemetry": false,
+  "git.allowForcePush": true
 }
