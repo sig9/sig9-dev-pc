@@ -9,7 +9,7 @@
       become: yes
       apt:
         package:
-          - emacs
+          - emacs-lucid
       when: not is_wsl
 
     - name: Install Emacs-nox
