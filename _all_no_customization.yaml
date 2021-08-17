@@ -108,3 +108,6 @@
 
 # # Sublime Text and Sublime Merge
 # - import_playbook: sublime/core.yaml
+
+# Tilix
+- import_playbook: tilix/core.yaml
