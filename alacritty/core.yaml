@@ -34,6 +34,20 @@
         package: alacritty
       when: is_ubuntu and not is_wsl
 
+    - name: Check if gnome-terminal exists
+      stat:
+        path: /usr/bin/gnome-terminal.wrapper
+      register: gt_file_info
+      when: is_ubuntu
+
+    - name: Set gnome terminal as Default
+      become: yes
+      alternatives:
+        name: x-terminal-emulator
+        path: "/usr/bin/gnome-terminal.wrapper"
+        priority: 49
+      when: is_ubuntu and gt_file_info.stat.exists
+
     # macOS
 
     - name: Install Alacritty (macOS)
