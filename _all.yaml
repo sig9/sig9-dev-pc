@@ -33,9 +33,12 @@
 
 - import_playbook: golang/vscode.yaml
 
-- import_playbook: mono/vscode.yaml
+# - import_playbook: mono/vscode.yaml
 
-- import_playbook: no-screen-blank/core.yaml
+# Don't think I need this, probabably because I did
+# apt remove gnome-screensaver light-locker xfce4-screensaver
+# apt install chromium-browser ncdu ansible xfce4-whiskermenu-plugin emacs-nox tailscale apt-trasnport-https tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer azure-cli
+# # - import_playbook: no-screen-blank/core.yaml
 
 - import_playbook: nodejs/customization.yaml
 - import_playbook: nodejs/vscode.yaml
@@ -44,8 +47,8 @@
 
 - import_playbook: python/vscode.yaml
 
-- import_playbook: ruby/customization.yaml
-- import_playbook: ruby/vscode.yaml
+# - import_playbook: ruby/customization.yaml
+# - import_playbook: ruby/vscode.yaml
 
 - import_playbook: rust-lang/vscode.yaml
 

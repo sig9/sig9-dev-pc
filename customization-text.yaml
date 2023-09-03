@@ -85,20 +85,22 @@
           disk_display="infobar"
           thumbnail_dir="${XDG_CACHE_HOME:-${HOME}/.cache}/thumbnails/neofetch"
 
-    - name: Add neofetch & fortune to ~/.bashrc
-      blockinfile:
-        path: ~/.bashrc
-        marker: "### {mark} Ansible managed: login banner"
-        block: |
-          echo ""
-          neofetch
-          fortune
+    # - name: Add neofetch & fortune to ~/.bashrc
+    #   blockinfile:
+    #     path: ~/.bashrc
+    #     marker: "### {mark} Ansible managed: login banner"
+    #     block: |
+    #       echo ""
+    #       neofetch
+    #       fortune
 
-    - name: Disable sudo password requirement
-      become: yes
-      lineinfile:
-        path: /etc/sudoers
-        line: "{{ lookup('env', 'USER') }} ALL=(ALL) NOPASSWD: ALL"
+    # handle this manually with /etc/sudoers.d/file_per_user
+
+    # - name: Disable sudo password requirement
+    #   become: yes
+    #   lineinfile:
+    #     path: /etc/sudoers
+    #     line: "{{ lookup('env', 'USER') }} ALL=(ALL) NOPASSWD: ALL"
 
     - name: Enhance terminal prompt
       blockinfile:

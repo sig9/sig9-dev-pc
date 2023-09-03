@@ -34,13 +34,13 @@
 - import_playbook: git/core.yaml
 
 # golang
-- import_playbook: golang/core.yaml
+#- import_playbook: golang/core.yaml
 
 # Virtualization (QEMU/KVM)
 - import_playbook: virtualization/core.yaml
 
 # Mono (.NET Framework)
-- import_playbook: mono/core.yaml
+#- import_playbook: mono/core.yaml
 
 # NodeJS
 - import_playbook: nodejs/core.yaml
@@ -55,7 +55,7 @@
 - import_playbook: python/core.yaml
 
 # Ruby
-- import_playbook: ruby/core.yaml
+#- import_playbook: ruby/core.yaml
 
 # rust-lang
 - import_playbook: rust-lang/core.yaml
@@ -66,7 +66,7 @@
 - import_playbook: alacritty/core.yaml
 
 # Microsoft Edge
-- import_playbook: edge/core.yaml
+#- import_playbook: edge/core.yaml
 
 # Prettier version of ping w/ graphs
 - import_playbook: prettyping/core.yaml
@@ -75,18 +75,17 @@
 - import_playbook: remmina/core.yaml
 
 # Slack desktop application
-- import_playbook: slack/core.yaml
+# - import_playbook: slack/core.yaml
 
 # VideoLan Client (primarily for codecs)
-- import_playbook: vlc/core.yaml
+# - import_playbook: vlc/core.yaml
 
 ##### Applications (commercial license required)
 
 # Beyond Compare 4
-- import_playbook: bc4/core.yaml
+# unfortunately  not supported on aarch64
+# https://forum.scootersoftware.com/forum/beyond-compare-3-discussion/general-discussion/9108-support-for-arm-processors-like-the-raspberry-pi/page2
+# - import_playbook: bc4/core.yaml
 
 # Google Backup and Sync (compatible; using Insync on Linux)
-- import_playbook: google-backup/core.yaml
-
-# Sublime Text and Sublime Merge
-- import_playbook: sublime/core.yaml
+#- import_playbook: google-backup/core.yaml
