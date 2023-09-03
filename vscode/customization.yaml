@@ -34,6 +34,19 @@
         - streetsidesoftware.code-spell-checker           # Code Spell Checker
         - thenikso.github-plus-theme                      # GitHub Plus Theme
         - visualstudioexptteam.vscodeintellicode          # Visual Studio IntelliCode
+        - esbenp.prettier-vscode
+        - GitHub.codespaces
+        - GitHub.copilot
+        - GitHub.copilot-chat
+        - github.vscode-github-actions
+        - GitHub.vscode-pull-request-github
+        - hediet.vscode-drawio
+        - jdinhlife.gruvbox
+        - johnpapa.vscode-peacock
+        - mohsen1.prettify-json
+        - Nuxt.mdc
+
+
 
     - name: Override default VS Code preferences
       copy:
