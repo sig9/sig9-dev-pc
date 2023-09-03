@@ -298,6 +298,12 @@
           </fontconfig>
       when: is_wsl
 
+    - name: "[Non-WSL] Install gnome shell extension prefs (via APT)"
+      become: yes
+      apt:
+        package: "gnome-shell-extension-prefs"
+      when: not is_wsl
+
     - name: "[Non-WSL] Create GNOME extension directory"
       file:
         path: ~/.local/share/gnome-shell/extensions/{{ item.name }}
