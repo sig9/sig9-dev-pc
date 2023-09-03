@@ -3,7 +3,8 @@
   connection: local
 
   vars:
-    starship_version: v1.13.1
+    starship_version: v1.16.0
+    starship_arch: aarch64
 
   tasks:
     - name: Create binary folder
@@ -15,7 +16,7 @@
     - name: Install Starship
       become: yes
       unarchive:
-        src: https://github.com/starship/starship/releases/download/{{ starship_version }}/starship-x86_64-unknown-linux-musl.tar.gz
+        src: https://github.com/starship/starship/releases/download/{{ starship_version }}/starship-{{ starship_arch }}-unknown-linux-musl.tar.gz
         dest: /opt/starship/{{ starship_version }}
         remote_src: yes
         creates: /opt/starship/{{ starship_version }}/starship
