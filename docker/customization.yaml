@@ -39,3 +39,6 @@
             ],
             "experimental": true
           }
+# https://stackoverflow.com/questions/46787983/what-native-overlay-diff-mean-in-overlay2-storage-driver
+# modprobe -r overlay && modprobe overlay redirect_dir=off && systemctl restart docker
+#  In recent kernels redirect_dir=off is not enough. Turns out kernels >= 4.20 enable redirect_dir when metacopy is on. You need to set metacopy=off redirect_dir=off as module parameter
