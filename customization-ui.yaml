@@ -9,14 +9,14 @@
 
     dconf_config:
       # Themes
-      - key: /org/gnome/desktop/interface/cursor-theme
-        value: "'Paper'"
-      - key: /org/gnome/desktop/interface/gtk-theme
-        value: "'Numix'"
-      - key: /org/gnome/desktop/interface/icon-theme
-        value: "'Paper'"
-      - key: /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-theme-colors
-        value: "false"
+      # - key: /org/gnome/desktop/interface/cursor-theme
+      #   value: "'Paper'"
+      # - key: /org/gnome/desktop/interface/gtk-theme
+      #   value: "'Numix'"
+      # - key: /org/gnome/desktop/interface/icon-theme
+      #   value: "'Paper'"
+      # - key: /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-theme-colors
+      #   value: "false"
       # Fonts
       - key: /org/gnome/desktop/interface/monospace-font-name
         value: "'UbuntuMono Nerd Font Mono 12'"
@@ -24,21 +24,21 @@
       - key: /org/gnome/desktop/interface/enable-animations
         value: "false"
       - key: /org/gnome/desktop/interface/show-battery-percentage
-        value: "true"
+        value: "false"
       - key: /org/gnome/desktop/sound/allow-volume-above-100-percent
         value: "true"
       - key: /org/gnome/desktop/wm/preferences/button-layout
         value: "'appmenu:minimize,maximize,close'"
       - key: /org/gnome/desktop/wm/preferences/num-workspaces
-        value: "1"
-      - key: /org/gnome/mutter/dynamic-workspaces
-        value: "false"
+        value: "2"
+      # - key: /org/gnome/mutter/dynamic-workspaces
+      #   value: "false"
       - key: /org/gnome/settings-daemon/plugins/xsettings/antialiasing
         value: "'grayscale'"
       - key: /org/gnome/shell/favorite-apps
         value: "['alacritty.desktop', 'sublime_text.desktop', 'sublime_merge.desktop', 'postman.desktop', 'virt-manager.desktop', 'code.desktop', 'org.remmina.Remmina.desktop']"
-      - key: /org/gnome/shell/extensions/desktop-icons/show-home
-        value: "false"
+      # - key: /org/gnome/shell/extensions/desktop-icons/show-home
+      #   value: "false"
       - key: /org/gnome/shell/extensions/desktop-icons/show-trash
         value: "true"
       # Keyboard & mouse settings
