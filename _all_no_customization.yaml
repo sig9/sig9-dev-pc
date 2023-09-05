@@ -15,6 +15,9 @@
 
 ##### Developer tools
 
+# httpie
+- import_playbook: httpie/core.yaml
+
 # Visual Studio Code
 - import_playbook: vscode/core.yaml
 

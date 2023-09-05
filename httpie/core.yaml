@@ -1,0 +1,39 @@
+- name: httpie
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - name: Add httpie gpg key
+      become: yes
+      get_url:
+        url: https://packages.httpie.io/deb/KEY.gpg
+        dest: /etc/apt/trusted.gpg.d/httpie.asc
+        mode: 0644
+
+    - name: Add httpie APT package repository
+      become: yes
+      apt_repository:
+        repo: deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/httpie.asc] https://packages.httpie.io/deb ./
+        filename: httpie
+        update_cache: no
+      register: apt_repository
+
+    - name: Update APT package list
+      become: yes
+      apt:
+        update_cache: yes
+      when: apt_repository.changed
+      register: apt_update
+      retries: 5
+      until: apt_update is success
+
+    - name: Install httpie
+      become: yes
+      apt:
+        package: httpie
+
+    # - name: Add bcomp alias
+    #   file:
+    #     path: ~/bin/bcomp
+    #     src: /usr/bin/bcompare
+    #     state: link

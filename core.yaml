@@ -20,6 +20,8 @@
         - apt-daily
         - apt-daily-upgrade
 
+    # TODO is /usr/share/keyrings a better place for these
+    # see also httpie/core.yaml using /etc/apt/trusted.gpg.d/httpie.asc <- from .gpg (aparently skips gpg -dearmor)
     - name: Create /etc/apt/keyrings
       become: yes
       file:
