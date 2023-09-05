@@ -164,7 +164,7 @@
           export LSCOLORS=GxFxCxDxBxegedabagaced
 
           # Start in the ~/dev folder when it exists (and we're in an interactive shell)
-          if [ -d ~/dev ]; then
+          if [ -d ~/dev && "${TERM_PROGRAM}" -ne "vscode" ]; then
             case "$-" in
               *i*) cd ~/dev ;;
               *)   ;;
